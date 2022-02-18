@@ -1,13 +1,12 @@
 import express from "express";
-import morgan from "morgan";
-import { join } from "../controllers/userController.js";
-import { trending } from "../controllers/videoController.js";
-import { search } from "../controllers/videoController.js";
+
+import { join, login } from "../controllers/userController.js";
+import { home, search } from "../controllers/videoController.js";
 
 const globalRouter = express.Router();
 
-globalRouter.get("/", trending);
+globalRouter.get("/", home);
 globalRouter.get("/join", join);
-globalRouter.get("/search", search);
+globalRouter.get("/login", login);
 
 export default globalRouter;

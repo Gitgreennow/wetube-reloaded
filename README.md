@@ -4,8 +4,13 @@
 /join -> Join
 /login -> Login
 /search -> Search
-/edit-user -> Edit Profile
-/delete-user -> Delete Profile
-/watch-video -> Watch Video
-/edit-video -> Edit Video
-/delete-video -> Delete Video
+
+/users/:id -> See user
+/users/logout -> Log Out
+/users/edit -> Edit MY Profile
+/users/remove -> Delete My Profile
+
+/videos/:id -> See Video
+/videos/:id/edit -> Edit Video
+/videos/:id/remove -> Delete Video
+/videos/upload -> Upload video

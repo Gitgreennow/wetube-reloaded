@@ -1,8 +1,32 @@
-export const trending = (req, res) => res.send("Home Page Videos");
-export const watch = (req, res) => res.send("Watch Videos");
-export const edit = (req, res) => res.send("Edit Videos");
+import Video from "../models/Video";
+
+export const home = (req, res) => {
+  Video.find;
+  return res.render("home", { pageTitle: "Home" });
+};
+
+export const watch = (req, res) => {
+  const { id } = req.params;
+
+  return res.render("watch", { pageTitle: `Watching` });
+};
+export const getEdit = (req, res) => {
+  const { id } = req.params;
+
+  return res.render("edit", { pageTitle: `Editing` });
+};
+export const postEdit = (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+
+  return res.redirect(`/videos/${id}`);
+};
+export const getUpload = (req, res) => {
+  return res.render("upload", { pageTitle: "Upload Video" });
+};
+export const postUpload = (req, res) => {
+  const { title } = req.body;
+
+  return res.redirect("/");
+};
 export const search = (req, res) => res.send("Search Videos");
-export const remove = (req, res) => res.send("Delete Videos");
-export const comments = (req, res) => res.send("Comment on Videos");
-export const removeComments = (req, res) =>
-  res.send("Delete Comment On Videos");
